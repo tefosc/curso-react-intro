@@ -1,4 +1,3 @@
-import "./App.css";
 import { TodoCounter } from "./TodoCounter";
 import { TodoSearch } from "./TodoSearch";
 import { TodoList } from "./TodoList";
@@ -8,7 +7,7 @@ import { CreateTodoButton } from "./CreateTodoButton";
 const defaultTodos = [
   {
     texto: "Ir al mercado",
-    completed: false,
+    completed: true,
   },
   {
     texto: "Cortar cebolla",
