@@ -11,10 +11,8 @@
   border-bottom: 3px solid black;
   border-radius: 8px;
   font-family: "Roboto", sans-serif;
-  padding-left: 10px;
   padding: 0.5rem;
-  background-color: linear-gradient(to top, #851145, #cb4782);
-  background-color: #f73378;
+  background: linear-gradient(to left, #851145, #cb4782);
   font-weight: bold;
 }
 
