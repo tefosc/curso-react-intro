@@ -1,18 +1,25 @@
 import "./styles/TodoItem.css";
 
-export function TodoItem({ texto, completed }) {
+export function TodoItem(props) {
   return (
     <>
       <li className="Todoitem">
         <span
-          className={`Icon Icon-check ${completed && "Icon-check--active"} `}
+          onClick={props.onComplete}
+          className={`Icon Icon-check ${
+            props.completed && "Icon-check--active"
+          } `}
         >
           V
         </span>
-        <p className={`TodoItem-p ${completed && "TodoItem-p--complete"} `}>
-          {texto}
+        <p
+          className={`TodoItem-p ${props.completed && "TodoItem-p--complete"} `}
+        >
+          {props.texto}
         </p>
-        <span className={`Icon Icon-delete`}>X</span>
+        <span onClick={props.onDelete} className={`Icon Icon-delete`}>
+          X
+        </span>
       </li>
     </>
   );
