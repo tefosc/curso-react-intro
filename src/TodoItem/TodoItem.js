@@ -1,4 +1,6 @@
-import "./styles/TodoItem.css";
+import "./TodoItem.css";
+import { DeleteIcon } from "../Icons/DeleteIcon";
+import { CompletedIcon } from "../Icons/CompletedIcon";
 
 export function TodoItem(props) {
   return (
@@ -10,7 +12,7 @@ export function TodoItem(props) {
             props.completed && "Icon-check--active"
           } `}
         >
-          V
+          <CompletedIcon />
         </span>
         <p
           className={`TodoItem-p ${props.completed && "TodoItem-p--complete"} `}
@@ -18,7 +20,7 @@ export function TodoItem(props) {
           {props.texto}
         </p>
         <span onClick={props.onDelete} className={`Icon Icon-delete`}>
-          X
+          <DeleteIcon />
         </span>
       </li>
     </>

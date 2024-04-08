@@ -33,7 +33,7 @@
   align-items: center;
   height: 48px;
   width: 48px;
-  font-size: 24px;
+  font-size: 36px;
   font-weight: bold;
 }
 .Icon-check {
@@ -42,7 +42,7 @@
 }
 
 .Icon-check--active {
-  color: #4caf50;
+  color: #be1963;
 }
 
 .Icon-delete {
@@ -52,5 +52,5 @@
 }
 
 .Icon-delete:hover {
-  color: red;
+  color: #851145;
 }
