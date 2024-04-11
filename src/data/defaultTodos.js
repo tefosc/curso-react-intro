@@ -1,4 +1,4 @@
-export const defaultTodos = [
+export let defaultTodos = [
   {
     texto: "Ir al mercado",
     completed: true,
