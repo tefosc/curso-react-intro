@@ -38,11 +38,12 @@
 }
 .Icon-check {
   position: absolute;
+  color: #be1963;
   left: 12px;
 }
 
 .Icon-check--active {
-  color: #be1963;
+  color: black;
 }
 
 .Icon-delete {
