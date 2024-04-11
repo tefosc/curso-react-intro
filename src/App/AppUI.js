@@ -11,12 +11,18 @@ export function AppUi({
   searchedTodos,
   completeTodo,
   deleteTodo,
+  loading,
+  error,
 }) {
   return (
     <>
       <TodoCounter completed={completedTodos} total={totalTodos} />
       <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
       <TodoList>
+        {loading && <h2>Cargando datos...</h2>}
+        {error && <h2>Error al cargar los datos...</h2>}
+        {!loading && searchedTodos.length === 0 && <h2>Crea tu primer todo</h2>}
+
         {searchedTodos.map((todo) => (
           <TodoItem
             key={todo.texto}

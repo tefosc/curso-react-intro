@@ -1,10 +1,15 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useLocalStorage } from "./useLocalStotage.js";
 import { defaultTodos } from "../data/defaultTodos.js";
 import { AppUi } from "./AppUI.js";
 
 function App() {
-  const [todos, saveTodos] = useLocalStorage("TODOS_V4", defaultTodos);
+  const {
+    item: todos,
+    saveItem: saveTodos,
+    loading,
+    error,
+  } = useLocalStorage("TODOS_V2", []);
   const [searchValue, setSearchValue] = useState("");
 
   const searchedTodos = todos.filter((todo) =>
@@ -13,10 +18,6 @@ function App() {
 
   const completedTodos = searchedTodos.filter((todo) => todo.completed).length;
   const totalTodos = searchedTodos.length;
-
-  console.log(1);
-  useEffect(() => console.log(2), [totalTodos]);
-  console.log(3);
 
   const completeTodo = (texto) => {
     const newTodos = [...todos];
@@ -34,6 +35,8 @@ function App() {
 
   return (
     <AppUi
+      loading={loading}
+      error={error}
       setSearchValue={setSearchValue}
       completeTodo={completeTodo}
       completedTodos={completedTodos}
