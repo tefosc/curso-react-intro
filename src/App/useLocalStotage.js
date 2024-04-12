@@ -23,8 +23,7 @@ export function useLocalStorage(itemName, initialValue) {
         setError(true);
       }
     }, 2000);
-    console.log("a");
-  });
+  }, []);
 
   const saveItem = (newItem) => [
     localStorage.setItem(itemName, JSON.stringify(newItem)),
