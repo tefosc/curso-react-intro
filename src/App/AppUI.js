@@ -8,9 +8,11 @@ import { EmptyTodos } from "../EmptyTodos/EmptyTodos.js";
 import { CreateTodoButton } from "../CreateTodoButton/CreateTodoButton.js";
 import { TodoContext } from "../TodoContext/TodoContext.js";
 import { useContext } from "react";
+import { Modal } from "../TodoModal/Modal.js";
+import { TodoForm } from "../TodoForm/TodoForm.js";
 
 export function AppUi() {
-  const { loading, error, searchedTodos, completeTodo, deleteTodo } =
+  const { loading, error, searchedTodos, completeTodo, deleteTodo, openModal } =
     useContext(TodoContext);
   return (
     <>
@@ -44,6 +46,12 @@ export function AppUi() {
       </TodoContext.Consumer>
 
       <CreateTodoButton />
+
+      {openModal && (
+        <Modal>
+          <TodoForm />
+        </Modal>
+      )}
     </>
   );
 }

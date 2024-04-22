@@ -1,0 +1,91 @@
+form {
+  width: 90%;
+  max-width: 400px;
+  background-color: #be1963;
+  padding: 33px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 50%; /* Centra verticalmente el modal en la mitad de la ventana */
+  left: 50%; /* Centra horizontalmente el modal en la mitad de la ventana */
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Corrige la posición del modal para que esté centrado */
+  width: 200px; /* Establece el ancho deseado del modal */
+  height: 200px; /* Establece la altura deseada del modal */
+  border-radius: 8px;
+}
+
+label {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  color: #500726;
+  margin-bottom: 26px;
+}
+
+textarea {
+  background-color: #fbcfe9;
+  border: 2px solid #500726;
+  box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.25);
+  color: #500726;
+  font-size: 20px;
+  text-align: center;
+  padding: 12px;
+  height: 96px;
+  width: calc(100%-25px);
+  resize: none;
+}
+
+textarea::placeholder {
+  color: #500726;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
+textarea:focus {
+  outline-color: #821946;
+}
+
+.TodoForm-buttonContainer {
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.TodoForm-button {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 400;
+  /* width: 120px; */
+  height: 48px;
+  border-radius: 8px;
+  border: none;
+  font-family: "Roboto";
+}
+
+.TodoForm-button--cancell {
+  background-color: #f373ba;
+  color: #fdf2f8;
+}
+
+.TodoForm-button--cancell:hover {
+  background-color: #fdf2f8;
+  color: #f373ba;
+}
+
+.TodoForm-button--add {
+  background-color: #500726;
+  color: #eb499e;
+}
+
+.TodoForm-button--add:hover {
+  background-color: #eb499e;
+  color: #500726;
+}

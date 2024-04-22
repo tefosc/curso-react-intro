@@ -1,10 +1,11 @@
-.TodoSearch {
-  margin: 0 auto;
+.ContainterSearchTodo {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+}
+
+.TodoSearch {
   width: calc(100% - 100px);
-  margin-bottom: 48px;
   border-top: none;
   border-left: none;
   border-right: 3px solid black;
@@ -14,6 +15,9 @@
   padding: 0.5rem;
   background: linear-gradient(to left, #851145, #cb4782);
   font-weight: bold;
+  padding-left: 30px;
+  box-sizing: border-box;
+  margin-left: 10px;
 }
 
 .TodoSearch::placeholder {

@@ -13,6 +13,8 @@ function TodoProvider({ children }) {
   } = useLocalStorage("TODOS_V3", defaultTodos);
   const [searchValue, setSearchValue] = useState("");
 
+  const [openModal, setOpenModal] = useState(false);
+
   const searchedTodos = todos.filter((todo) =>
     todo.texto.toLocaleLowerCase().includes(searchValue)
   );
@@ -20,6 +22,14 @@ function TodoProvider({ children }) {
   const completedTodos = searchedTodos.filter((todo) => todo.completed).length;
   const totalTodos = searchedTodos.length;
 
+  const addTodo = (texto) => {
+    const newTodos = [...todos];
+    newTodos.push({
+      texto,
+      completed: false,
+    });
+    saveTodos(newTodos);
+  };
   const completeTodo = (texto) => {
     const newTodos = [...todos];
     const todoIndex = newTodos.findIndex((todo) => todo.texto === texto);
@@ -45,6 +55,9 @@ function TodoProvider({ children }) {
         deleteTodo,
         loading,
         error,
+        setOpenModal,
+        openModal,
+        addTodo,
       }}
     >
       {children}

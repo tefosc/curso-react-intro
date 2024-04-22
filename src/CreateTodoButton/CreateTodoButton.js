@@ -1,14 +1,18 @@
+import { useContext } from "react";
 import "./CreateTodoButton.css";
+import { TodoContext } from "../TodoContext/TodoContext";
+import { AddIcon } from "../Icons/AddIcon";
 export function CreateTodoButton() {
+  const { openModal, setOpenModal } = useContext(TodoContext);
   return (
     <>
       <button
         onClick={() => {
-          console.log("Le diste click");
+          setOpenModal(!openModal);
         }}
         className="CreateTodoButton"
       >
-        +
+        <AddIcon />
       </button>
     </>
   );
