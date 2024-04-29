@@ -18,32 +18,29 @@ export function AppUi() {
     <>
       <TodoCounter />
       <TodoSearch />
-      <TodoContext.Consumer>
-        {() => (
-          <TodoList>
-            {loading && (
-              <>
-                <TodosLoading />
-                <TodosLoading />
-                <TodosLoading />
-              </>
-            )}
-            {error && <TodosError />}
-            {!loading && searchedTodos.length === 0 && <EmptyTodos />}
 
-            {!loading &&
-              searchedTodos.map((todo) => (
-                <TodoItem
-                  key={todo.texto}
-                  texto={todo.texto}
-                  completed={todo.completed}
-                  onComplete={() => completeTodo(todo.texto)}
-                  onDelete={() => deleteTodo(todo.texto)}
-                />
-              ))}
-          </TodoList>
+      <TodoList>
+        {loading && (
+          <>
+            <TodosLoading />
+            <TodosLoading />
+            <TodosLoading />
+          </>
         )}
-      </TodoContext.Consumer>
+        {error && <TodosError />}
+        {!loading && searchedTodos.length === 0 && <EmptyTodos />}
+
+        {!loading &&
+          searchedTodos.map((todo) => (
+            <TodoItem
+              key={todo.texto}
+              texto={todo.texto}
+              completed={todo.completed}
+              onComplete={() => completeTodo(todo.texto)}
+              onDelete={() => deleteTodo(todo.texto)}
+            />
+          ))}
+      </TodoList>
 
       <CreateTodoButton />
 

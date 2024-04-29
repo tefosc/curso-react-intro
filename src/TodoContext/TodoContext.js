@@ -16,7 +16,7 @@ function TodoProvider({ children }) {
   const [openModal, setOpenModal] = useState(false);
 
   const searchedTodos = todos.filter((todo) =>
-    todo.texto.toLocaleLowerCase().includes(searchValue)
+    todo.texto.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase())
   );
 
   const completedTodos = searchedTodos.filter((todo) => todo.completed).length;
