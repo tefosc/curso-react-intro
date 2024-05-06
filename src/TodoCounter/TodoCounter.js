@@ -7,11 +7,23 @@ export function TodoCounter() {
 
   return (
     <>
-      {loading ? (
+      {loading && (
         <h1 className="TodoCounter">
-          Totos los <span>TODO's</span> están completados 🥳🎉
+          Cargando los <span>TODO's</span> espere un momento
         </h1>
-      ) : (
+      )}
+      {!loading && totalTodos === 0 && (
+        <h1 className="TodoCounter">
+          No tienes <span>TODO's</span> por hacer
+        </h1>
+      )}
+      {!loading && completedTodos === totalTodos && totalTodos > 0 && (
+        <h1 className="TodoCounter">
+          ¡Felicidades! has completado todos tus <span>TODO's</span>
+          🥳🎉
+        </h1>
+      )}
+      {!loading && completedTodos !== totalTodos && (
         <h1 className="TodoCounter">
           Has completado <span>{completedTodos}</span> de{" "}
           <span>{totalTodos}</span> TODO's
